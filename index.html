@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KISS Fitness Log</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="container">
+
     <h1>KISS Fitness Log</h1>
-    <p>Als je dit ziet werkt GitHub Pages.</p>
+
+    <div class="card">
+        <label>Oefening</label>
+        <select id="exercise"></select>
+
+        <label>Gewicht (kg)</label>
+        <input type="number" id="weight">
+
+        <label>Reps</label>
+        <input type="number" id="reps">
+
+        <button id="saveBtn">Opslaan</button>
+    </div>
+
+    <div class="card">
+        <h2>Vorige keer</h2>
+        <div id="lastSet">Geen gegevens</div>
+    </div>
+
+    <div class="card">
+        <h2>Historie</h2>
+        <div id="history"></div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
 </body>
 </html>
