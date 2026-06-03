@@ -37,6 +37,8 @@ const deleteExerciseBtn =
 
 const historyDiv = document.getElementById("history");
 const lastSetDiv = document.getElementById("lastSet");
+const saveMessage =
+    document.getElementById("saveMessage");
 
 function loadExercises() {
 
@@ -214,8 +216,17 @@ saveBtn.addEventListener("click", () => {
 
     saveData(data);
 
-    updateLastSet();
-    updateHistory();
+updateLastSet();
+updateHistory();
+
+saveMessage.textContent =
+    "✔️ Set opgeslagen";
+
+setTimeout(() => {
+
+    saveMessage.textContent = "";
+
+}, 2000);
 });
 
 exerciseSelect.addEventListener("change", () => {
