@@ -25,6 +25,14 @@ function saveExercises(exercises) {
     );
 
 }
+function saveExercises(exercises) {
+
+    localStorage.setItem(
+        "kissExercises",
+        JSON.stringify(exercises)
+    );
+
+}
 
 const exerciseSelect = document.getElementById("exercise");
 const weightInput = document.getElementById("weight");
