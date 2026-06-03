@@ -182,6 +182,34 @@ exerciseSelect.addEventListener("change", () => {
     updateLastSet();
     updateHistory();
 });
+addExerciseBtn.addEventListener("click", () => {
+
+    const name = prompt(
+        "Naam van nieuwe oefening:"
+    );
+
+    if (!name) {
+        return;
+    }
+
+    const exercises = getExercises();
+
+    if (exercises.includes(name)) {
+
+        alert("Oefening bestaat al.");
+
+        return;
+    }
+
+    exercises.push(name);
+
+    saveExercises(exercises);
+
+    loadExercises();
+
+    exerciseSelect.value = name;
+
+});
 
 loadExercises();
 updateLastSet();
