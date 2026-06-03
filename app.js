@@ -182,6 +182,7 @@ exerciseSelect.addEventListener("change", () => {
     updateLastSet();
     updateHistory();
 });
+
 addExerciseBtn.addEventListener("click", () => {
 
     const name = prompt(
