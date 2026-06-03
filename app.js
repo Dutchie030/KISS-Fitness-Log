@@ -101,29 +101,31 @@ function updateHistory() {
 
     const groupedData = {};
 
-    data.forEach(item => {
+data.forEach(item => {
 
-        const date =
-            new Date(item.date)
-            .toLocaleDateString("nl-NL");
+    const date =
+        new Date(item.date)
+        .toLocaleDateString("nl-NL");
 
-        const key =
-            `${date}|${item.weight}|${item.reps}`;
+    const key =
+        `${date}|${item.weight}|${item.reps}`;
 
-        if (!groupedData[key]) {
+    if (!groupedData[key]) {
 
-            groupedData[key] = {
-                date,
-                weight: item.weight,
-                reps: item.reps,
-                count: 0
-            };
+        groupedData[key] = {
+            date,
+            weight: item.weight,
+            reps: item.reps,
+            count: 0,
+            items: []
+        };
 
-        }
+    }
 
-        groupedData[key].count++;
+    groupedData[key].count++;
+    groupedData[key].items.push(item);
 
-    });
+});
 
     Object.values(groupedData).forEach(group => {
 
