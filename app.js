@@ -129,17 +129,66 @@ data.forEach(item => {
 
     Object.values(groupedData).forEach(group => {
 
-        const div =
-            document.createElement("div");
+    const div =
+        document.createElement("div");
 
-        div.className = "history-item";
+    div.className = "history-item";
 
-        div.textContent =
-            `${group.date} - ${group.weight} kg × ${group.reps} (${group.count} sets)`;
+    const text =
+        document.createElement("span");
 
-        historyDiv.appendChild(div);
+    text.textContent =
+        `${group.date} - ${group.weight} kg × ${group.reps} (${group.count} sets)`;
+
+    const deleteBtn =
+        document.createElement("button");
+
+    deleteBtn.textContent = "🗑️";
+
+    deleteBtn.style.width = "auto";
+    deleteBtn.style.marginLeft = "10px";
+    deleteBtn.style.padding = "4px 8px";
+
+    deleteBtn.addEventListener("click", () => {
+
+        if (!confirm(
+            "Eén set verwijderen?"
+        )) {
+            return;
+        }
+
+        const allData = getData();
+
+        const itemToDelete =
+            group.items[0];
+
+        const index =
+            allData.findIndex(entry =>
+                entry.date === itemToDelete.date &&
+                entry.exercise === itemToDelete.exercise &&
+                entry.weight === itemToDelete.weight &&
+                entry.reps === itemToDelete.reps
+            );
+
+        if (index !== -1) {
+
+            allData.splice(index, 1);
+
+            saveData(allData);
+
+            updateLastSet();
+            updateHistory();
+
+        }
 
     });
+
+    div.appendChild(text);
+    div.appendChild(deleteBtn);
+
+    historyDiv.appendChild(div);
+
+});
 
 }
 
