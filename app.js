@@ -13,6 +13,8 @@ const exerciseSelect = document.getElementById("exercise");
 const weightInput = document.getElementById("weight");
 const repsInput = document.getElementById("reps");
 const saveBtn = document.getElementById("saveBtn");
+const addExerciseBtn =
+    document.getElementById("addExerciseBtn");
 
 const historyDiv = document.getElementById("history");
 const lastSetDiv = document.getElementById("lastSet");
