@@ -98,53 +98,13 @@ function updateHistory() {
 
     historyDiv.innerHTML = "";
 
-    data.forEach(item => {
+    const groupedData = {};
 
-    const div = document.createElement("div");
-    div.className = "history-item";
+data.forEach(item => {
 
-    const date = new Date(item.date);
+    const date = new Date(item.date)
+        .toLocaleDateString("nl-NL");
 
-    const formattedDate =
-        date.toLocaleDateString("nl-NL");
-
-    const text = document.createElement("span");
-
-    text.textContent =
-        `${formattedDate} - ${item.weight} kg × ${item.reps}`;
-
-    const deleteBtn = document.createElement("button");
-
-    deleteBtn.textContent = "🗑️";
-
-    deleteBtn.style.width = "auto";
-    deleteBtn.style.marginLeft = "10px";
-    deleteBtn.style.padding = "4px 8px";
-
-    deleteBtn.addEventListener("click", () => {
-
-        if (!confirm("Set verwijderen?")) {
-            return;
-        }
-
-        const allData = getData();
-
-        const index = allData.findIndex(entry =>
-            entry.date === item.date &&
-            entry.exercise === item.exercise &&
-            entry.weight === item.weight &&
-            entry.reps === item.reps
-        );
-
-        if (index !== -1) {
-            allData.splice(index, 1);
-            saveData(allData);
-
-            updateLastSet();
-            updateHistory();
-        }
-
-    });
 
     div.appendChild(text);
     div.appendChild(deleteBtn);
