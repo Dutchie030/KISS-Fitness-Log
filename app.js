@@ -214,6 +214,29 @@ addExerciseBtn.addEventListener("click", () => {
 
 });
 
+deleteExerciseBtn.addEventListener("click", () => {
+
+    const exercise = exerciseSelect.value;
+
+    if (!confirm(`"${exercise}" verwijderen?`)) {
+        return;
+    }
+
+    let exercises = getExercises();
+
+    exercises = exercises.filter(
+        item => item !== exercise
+    );
+
+    saveExercises(exercises);
+
+    loadExercises();
+
+    updateLastSet();
+    updateHistory();
+
+});
+
 loadExercises();
 updateLastSet();
 updateHistory();
