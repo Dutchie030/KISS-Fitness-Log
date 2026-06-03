@@ -90,6 +90,7 @@ function updateLastSet() {
 }
 
 function updateHistory() {
+
     const exercise = exerciseSelect.value;
 
     const data = getData()
@@ -100,18 +101,44 @@ function updateHistory() {
 
     const groupedData = {};
 
-data.forEach(item => {
+    data.forEach(item => {
 
-    const date = new Date(item.date)
-        .toLocaleDateString("nl-NL");
+        const date =
+            new Date(item.date)
+            .toLocaleDateString("nl-NL");
 
+        const key =
+            `${date}|${item.weight}|${item.reps}`;
 
-    div.appendChild(text);
-    div.appendChild(deleteBtn);
+        if (!groupedData[key]) {
 
-    historyDiv.appendChild(div);
+            groupedData[key] = {
+                date,
+                weight: item.weight,
+                reps: item.reps,
+                count: 0
+            };
 
-});
+        }
+
+        groupedData[key].count++;
+
+    });
+
+    Object.values(groupedData).forEach(group => {
+
+        const div =
+            document.createElement("div");
+
+        div.className = "history-item";
+
+        div.textContent =
+            `${group.date} - ${group.weight} kg × ${group.reps} (${group.count} sets)`;
+
+        historyDiv.appendChild(div);
+
+    });
+
 }
 
 saveBtn.addEventListener("click", () => {
