@@ -72,8 +72,13 @@ function updateHistory() {
         const div = document.createElement("div");
         div.className = "history-item";
 
-        div.textContent =
-            `${item.weight} kg × ${item.reps}`;
+       const date = new Date(item.date);
+
+const formattedDate =
+    date.toLocaleDateString("nl-NL");
+
+div.textContent =
+    `${formattedDate} - ${item.weight} kg × ${item.reps}`;
 
         historyDiv.appendChild(div);
     });
