@@ -9,6 +9,129 @@ const defaultExercises = [
     "Leg Curl"
 ];
 
+function getExercises() {
+
+    return JSON.parse(
+        localStorage.getItem("kissExercises")
+    ) || defaultExercises;
+
+}
+
+function saveExercises(exercises) {
+
+    localStorage.setItem(
+        "kissExercises",
+        JSON.stringify(exercises)
+    );
+
+}
+Stap 4 - loadExercises vervangen
+
+Vervang de volledige functie:
+
+function loadExercises() {
+    ...
+}
+
+door:
+
+function loadExercises() {
+
+    exerciseSelect.innerHTML = "";
+
+    getExercises().forEach(exercise => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = exercise;
+        option.textContent = exercise;
+
+        exerciseSelect.appendChild(option);
+
+    });
+
+}
+Stap 5 - knop toevoegen
+
+Voeg helemaal onderaan toe:
+
+addExerciseBtn.addEventListener("click", () => {
+
+    const name = prompt(
+        "Naam van nieuwe oefening:"
+    );
+
+    if (!name) {
+        return;
+    }
+
+    const exercises = getExercises();
+
+    if (exercises.includes(name)) {
+
+        alert("Oefening bestaat al.");
+
+        return;
+    }
+
+    exercises.push(name);
+
+    saveExercises(exercises);
+
+    loadExercises();
+
+    exerciseSelect.value = name;
+
+});
+Resultaat
+
+Patricia kan straks:
+
++ Oefening toevoegen
+
+indrukken.
+
+Bijvoorbeeld:
+
+Hip Thrust
+
+invullen.
+
+En hoppa:
+
+Chest Press
+Low Row
+Shoulder Press
+Lat Machine
+Pectoral
+Leg Press
+Leg Extension
+Leg Curl
+Hip Thrust
+
+staat gewoon in haar dropdown.
+
+Geen JavaScript.
+
+Geen GitHub.
+
+Geen Marco bellen.
+
+Geen Patricia boos. 😂
+
+Mijn voorstel:
+
+🎯 Eerst dit werkend krijgen.
+
+🎯 Daarna bouwen we de tegenhanger:
+
+🗑️ Oefening verwijderen
+
+Want die wordt ineens heel eenvoudig als deze stap eenmaal werkt.
+
+Dus: code erin, commit, push, refresh... en dan ben ik heel benieuwd wat de eerste oefening wordt die Patricia toevoegt. 😄☕💪🚂
+
 const exerciseSelect = document.getElementById("exercise");
 const weightInput = document.getElementById("weight");
 const repsInput = document.getElementById("reps");
