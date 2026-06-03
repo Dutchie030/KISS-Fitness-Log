@@ -45,12 +45,21 @@ const historyDiv = document.getElementById("history");
 const lastSetDiv = document.getElementById("lastSet");
 
 function loadExercises() {
-    defaultExercises.forEach(exercise => {
-        const option = document.createElement("option");
+
+    exerciseSelect.innerHTML = "";
+
+    getExercises().forEach(exercise => {
+
+        const option =
+            document.createElement("option");
+
         option.value = exercise;
         option.textContent = exercise;
+
         exerciseSelect.appendChild(option);
+
     });
+
 }
 
 function getData() {
