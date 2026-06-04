@@ -112,7 +112,9 @@ data.forEach(item => {
         .toLocaleDateString("nl-NL");
 
     const key =
-        `${date}|${item.weight}|${item.reps}`;
+    item.duration
+        ? `${date}|duration|${item.duration}`
+        : `${date}|${item.weight}|${item.reps}`;
 
     if (!groupedData[key]) {
 
@@ -141,9 +143,17 @@ data.forEach(item => {
     const text =
         document.createElement("span");
 
+    if (group.duration) {
+
+    text.textContent =
+        `${group.date} - ${group.duration} min`;
+
+} else {
+
     text.textContent =
         `${group.date} - ${group.weight} kg × ${group.reps} (${group.count} sets)`;
 
+}
     const deleteBtn =
         document.createElement("button");
 
