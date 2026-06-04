@@ -167,6 +167,7 @@ data.forEach(item => {
 
     text.textContent =
         `${group.date} - ${group.duration} min (${group.count}x)`;
+    }
 
 }
 } else {
