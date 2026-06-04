@@ -29,6 +29,8 @@ function saveExercises(exercises) {
 const exerciseSelect = document.getElementById("exercise");
 const weightInput = document.getElementById("weight");
 const repsInput = document.getElementById("reps");
+const durationInput =
+    document.getElementById("duration");
 const saveBtn = document.getElementById("saveBtn");
 const addExerciseBtn =
     document.getElementById("addExerciseBtn");
