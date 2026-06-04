@@ -119,12 +119,13 @@ data.forEach(item => {
     if (!groupedData[key]) {
 
         groupedData[key] = {
-            date,
-            weight: item.weight,
-            reps: item.reps,
-            count: 0,
-            items: []
-        };
+    date,
+    weight: item.weight,
+    reps: item.reps,
+    duration: item.duration,
+    count: 0,
+    items: []
+};
 
     }
 
