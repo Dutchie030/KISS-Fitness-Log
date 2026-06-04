@@ -109,7 +109,7 @@ function updateLastSet() {
         lastSet.reps;
 
     durationInput.value = "";
-
+    }
 }
 
 function updateHistory() {
