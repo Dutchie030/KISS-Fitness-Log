@@ -199,22 +199,35 @@ data.forEach(item => {
 saveBtn.addEventListener("click", () => {
 
     const exercise = exerciseSelect.value;
-    const weight = Number(weightInput.value);
-    const reps = Number(repsInput.value);
+    const weight =
+    Number(weightInput.value);
 
-    if (!weight || !reps) {
-        alert("Vul gewicht en reps in.");
-        return;
-    }
+const reps =
+    Number(repsInput.value);
+
+const duration =
+    Number(durationInput.value);
+
+    if (
+    !(weight && reps) &&
+    !duration
+) {
+    alert(
+        "Vul gewicht/reps of duur in."
+    );
+
+    return;
+}
 
     const data = getData();
 
     data.push({
-        date: new Date().toISOString(),
-        exercise,
-        weight,
-        reps
-    });
+    date: new Date().toISOString(),
+    exercise,
+    weight,
+    reps,
+    duration
+});
 
     saveData(data);
 
