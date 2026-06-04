@@ -86,11 +86,30 @@ function updateLastSet() {
         return;
     }
 
+    if (lastSet.duration) {
+
+    lastSetDiv.textContent =
+        `${lastSet.duration} min`;
+
+    durationInput.value =
+        lastSet.duration;
+
+    weightInput.value = "";
+    repsInput.value = "";
+
+} else {
+
     lastSetDiv.textContent =
         `${lastSet.weight} kg × ${lastSet.reps}`;
 
-    weightInput.value = lastSet.weight;
-    repsInput.value = lastSet.reps;
+    weightInput.value =
+        lastSet.weight;
+
+    repsInput.value =
+        lastSet.reps;
+
+    durationInput.value = "";
+
 }
 
 function updateHistory() {
