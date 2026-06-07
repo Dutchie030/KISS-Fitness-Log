@@ -144,16 +144,16 @@ data.forEach(item => {
 
     const key =
     item.duration
-        ? `${date}|duration|${item.duration}`
+        ? `${date}|duration|${item.duration}|level|${item.level}|distance|${item.distance}`
         : `${date}|${item.weight}|${item.reps}`;
 
-    if (!groupedData[key]) {
-
-        groupedData[key] = {
+    if (!groupedData[key] = {
     date,
     weight: item.weight,
     reps: item.reps,
     duration: item.duration,
+    level: item.level,
+    distance: item.distance,
     count: 0,
     items: []
 };
