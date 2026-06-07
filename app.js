@@ -100,11 +100,28 @@ function updateLastSet() {
 
     if (lastSet.duration) {
 
-    lastSetDiv.textContent =
+    let lastSetText =
         `${lastSet.duration} min`;
+
+    if (lastSet.level) {
+        lastSetText += ` - level ${lastSet.level}`;
+    }
+
+    if (lastSet.distance) {
+        lastSetText += ` - ${lastSet.distance} km`;
+    }
+
+    lastSetDiv.textContent =
+        lastSetText;
 
     durationInput.value =
         lastSet.duration;
+
+    levelInput.value =
+        lastSet.level || "";
+
+    distanceInput.value =
+        lastSet.distance || "";
 
     weightInput.value = "";
     repsInput.value = "";
@@ -121,6 +138,8 @@ function updateLastSet() {
         lastSet.reps;
 
     durationInput.value = "";
+        levelInput.value = "";
+distanceInput.value = "";
     }
 }
 
