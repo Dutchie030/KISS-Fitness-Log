@@ -274,7 +274,9 @@ const distance =
     exercise,
     weight,
     reps,
-    duration
+    duration,
+    level,
+    distance
 });
 
     saveData(data);
