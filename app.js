@@ -356,12 +356,15 @@ moveUpBtn.addEventListener("click", () => {
 
     updateLastSet();
     updateHistory();
-exerciseMessage.textContent =
-    `${currentExercise} staat nu op plek ${exercises.indexOf(currentExercise) + 1} van ${exercises.length}`;
 
-setTimeout(() => {
-    exerciseMessage.textContent = "";
-}, 2000);
+    exerciseMessage.textContent =
+        `${currentExercise} staat nu op plek ${exercises.indexOf(currentExercise) + 1} van ${exercises.length}`;
+
+    setTimeout(() => {
+        exerciseMessage.textContent = "";
+    }, 2000);
+
+});
 
 moveDownBtn.addEventListener("click", () => {
 
@@ -384,12 +387,16 @@ moveDownBtn.addEventListener("click", () => {
 
     updateLastSet();
     updateHistory();
-exerciseMessage.textContent =
-    `${currentExercise} staat nu op plek ${exercises.indexOf(currentExercise) + 1} van ${exercises.length}`;
 
-setTimeout(() => {
-    exerciseMessage.textContent = "";
-}, 2000);
+    exerciseMessage.textContent =
+        `${currentExercise} staat nu op plek ${exercises.indexOf(currentExercise) + 1} van ${exercises.length}`;
+
+    setTimeout(() => {
+        exerciseMessage.textContent = "";
+    }, 2000);
+
+});
+
 loadExercises();
 updateLastSet();
 updateHistory();
