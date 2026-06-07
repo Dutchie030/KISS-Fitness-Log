@@ -72,3 +72,10 @@ button:hover {
 .exercise-buttons button {
     flex: 1;
 }
+
+#exerciseMessage {
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
