@@ -177,9 +177,21 @@ data.forEach(item => {
 
     if (group.duration) {
 
-    text.textContent =
-        `${group.date} - ${group.duration} min (${group.count}x)`;
-    
+    let cardioText =
+        `${group.date} - ${group.duration} min`;
+
+    if (group.level) {
+        cardioText += ` - level ${group.level}`;
+    }
+
+    if (group.distance) {
+        cardioText += ` - ${group.distance} km`;
+    }
+
+    cardioText += ` (${group.count}x)`;
+
+    text.textContent = cardioText;
+
 } else {
 
     text.textContent =
