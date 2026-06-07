@@ -71,6 +71,9 @@ button:hover {
 
 .exercise-buttons button {
     flex: 1;
+    padding: 10px;
+    min-height: 46px;
+    font-size: 20px;
 }
 
 #exerciseMessage {
