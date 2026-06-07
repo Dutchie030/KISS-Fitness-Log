@@ -82,3 +82,16 @@ button:hover {
     font-size: 0.9rem;
     font-weight: bold;
 }
+
+.cardio-row {
+    display: flex;
+    gap: 10px;
+}
+
+.cardio-field {
+    flex: 1;
+}
+
+.cardio-field label {
+    margin-bottom: 5px;
+}
