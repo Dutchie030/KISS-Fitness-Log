@@ -36,6 +36,8 @@ const addExerciseBtn =
     document.getElementById("addExerciseBtn");
 const deleteExerciseBtn =
     document.getElementById("deleteExerciseBtn");
+const renameExerciseBtn =
+    document.getElementById("renameExerciseBtn");
 const moveUpBtn =
     document.getElementById("moveUpBtn");
 const exerciseMessage =
@@ -335,6 +337,76 @@ deleteExerciseBtn.addEventListener("click", () => {
     updateHistory();
 
 });
+
+renameExerciseBtn.addEventListener("click", () => {
+
+    const currentExercise =
+        exerciseSelect.value;
+
+    const newName = prompt(
+        "Nieuwe naam:",
+        currentExercise
+    );
+
+    if (!newName) {
+        return;
+    }
+
+    const trimmedName =
+        newName.trim();
+
+    if (!trimmedName) {
+        return;
+    }
+
+    let exercises =
+        getExercises();
+
+    const index =
+        exercises.indexOf(currentExercise);
+
+    if (index !== -1) {
+
+        exercises[index] =
+            trimmedName;
+
+        saveExercises(exercises);
+
+    }
+
+    const data =
+        getData();
+
+    data.forEach(item => {
+
+        if (
+            item.exercise === currentExercise
+        ) {
+            item.exercise =
+                trimmedName;
+        }
+
+    });
+
+    saveData(data);
+
+    loadExercises();
+
+    exerciseSelect.value =
+        trimmedName;
+
+    updateLastSet();
+    updateHistory();
+
+    exerciseMessage.textContent =
+        `"${currentExercise}" hernoemd naar "${trimmedName}"`;
+
+    setTimeout(() => {
+        exerciseMessage.textContent = "";
+    }, 2000);
+
+});
+
 moveUpBtn.addEventListener("click", () => {
 
     const exercises = getExercises();
