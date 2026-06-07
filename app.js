@@ -31,6 +31,11 @@ const weightInput = document.getElementById("weight");
 const repsInput = document.getElementById("reps");
 const durationInput =
     document.getElementById("duration");
+const levelInput =
+    document.getElementById("level");
+
+const distanceInput =
+    document.getElementById("distance");
 const saveBtn = document.getElementById("saveBtn");
 const addExerciseBtn =
     document.getElementById("addExerciseBtn");
@@ -244,6 +249,12 @@ const reps =
 
 const duration =
     Number(durationInput.value);
+
+const level =
+    Number(levelInput.value);
+
+const distance =
+    Number(distanceInput.value);
 
     if (
     !(weight && reps) &&
