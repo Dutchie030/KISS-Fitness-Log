@@ -38,7 +38,8 @@ const deleteExerciseBtn =
     document.getElementById("deleteExerciseBtn");
 const moveUpBtn =
     document.getElementById("moveUpBtn");
-
+const exerciseMessage =
+    document.getElementById("exerciseMessage");
 const moveDownBtn =
     document.getElementById("moveDownBtn");
 const historyDiv = document.getElementById("history");
@@ -355,13 +356,12 @@ moveUpBtn.addEventListener("click", () => {
 
     updateLastSet();
     updateHistory();
-saveMessage.textContent =
+exerciseMessage.textContent =
     `${currentExercise} staat nu op plek ${exercises.indexOf(currentExercise) + 1} van ${exercises.length}`;
 
 setTimeout(() => {
-    saveMessage.textContent = "";
+    exerciseMessage.textContent = "";
 }, 2000);
-});
 
 moveDownBtn.addEventListener("click", () => {
 
@@ -384,13 +384,12 @@ moveDownBtn.addEventListener("click", () => {
 
     updateLastSet();
     updateHistory();
-saveMessage.textContent =
+exerciseMessage.textContent =
     `${currentExercise} staat nu op plek ${exercises.indexOf(currentExercise) + 1} van ${exercises.length}`;
 
 setTimeout(() => {
-    saveMessage.textContent = "";
+    exerciseMessage.textContent = "";
 }, 2000);
-});
 loadExercises();
 updateLastSet();
 updateHistory();
