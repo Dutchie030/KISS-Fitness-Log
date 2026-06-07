@@ -36,7 +36,11 @@ const addExerciseBtn =
     document.getElementById("addExerciseBtn");
 const deleteExerciseBtn =
     document.getElementById("deleteExerciseBtn");
+const moveUpBtn =
+    document.getElementById("moveUpBtn");
 
+const moveDownBtn =
+    document.getElementById("moveDownBtn");
 const historyDiv = document.getElementById("history");
 const lastSetDiv = document.getElementById("lastSet");
 const saveMessage =
@@ -330,7 +334,53 @@ deleteExerciseBtn.addEventListener("click", () => {
     updateHistory();
 
 });
+moveUpBtn.addEventListener("click", () => {
 
+    const exercises = getExercises();
+    const currentExercise = exerciseSelect.value;
+    const index = exercises.indexOf(currentExercise);
+
+    if (index <= 0) {
+        return;
+    }
+
+    const temp = exercises[index - 1];
+    exercises[index - 1] = exercises[index];
+    exercises[index] = temp;
+
+    saveExercises(exercises);
+    loadExercises();
+
+    exerciseSelect.value = currentExercise;
+
+    updateLastSet();
+    updateHistory();
+
+});
+
+moveDownBtn.addEventListener("click", () => {
+
+    const exercises = getExercises();
+    const currentExercise = exerciseSelect.value;
+    const index = exercises.indexOf(currentExercise);
+
+    if (index === -1 || index >= exercises.length - 1) {
+        return;
+    }
+
+    const temp = exercises[index + 1];
+    exercises[index + 1] = exercises[index];
+    exercises[index] = temp;
+
+    saveExercises(exercises);
+    loadExercises();
+
+    exerciseSelect.value = currentExercise;
+
+    updateLastSet();
+    updateHistory();
+
+});
 loadExercises();
 updateLastSet();
 updateHistory();
