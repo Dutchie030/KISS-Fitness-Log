@@ -355,7 +355,12 @@ moveUpBtn.addEventListener("click", () => {
 
     updateLastSet();
     updateHistory();
+saveMessage.textContent =
+    `${currentExercise} staat nu op plek ${exercises.indexOf(currentExercise) + 1} van ${exercises.length}`;
 
+setTimeout(() => {
+    saveMessage.textContent = "";
+}, 2000);
 });
 
 moveDownBtn.addEventListener("click", () => {
@@ -379,7 +384,12 @@ moveDownBtn.addEventListener("click", () => {
 
     updateLastSet();
     updateHistory();
+saveMessage.textContent =
+    `${currentExercise} staat nu op plek ${exercises.indexOf(currentExercise) + 1} van ${exercises.length}`;
 
+setTimeout(() => {
+    saveMessage.textContent = "";
+}, 2000);
 });
 loadExercises();
 updateLastSet();
