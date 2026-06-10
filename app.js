@@ -45,7 +45,8 @@ const renameExerciseBtn =
     document.getElementById("renameExerciseBtn");
 const moveUpBtn =
     document.getElementById("moveUpBtn");
-
+const historyExerciseName =
+    document.getElementById("historyExerciseName");
 const historyBtn =
     document.getElementById("historyBtn");
 
@@ -498,8 +499,13 @@ moveUpBtn.addEventListener("click", () => {
 
 historyBtn.addEventListener("click", () => {
 
+    historyExerciseName.textContent =
+        exerciseSelect.value;
+
     homePage.classList.add("hidden");
     historyPage.classList.remove("hidden");
+
+    updateHistory();
 
 });
 
