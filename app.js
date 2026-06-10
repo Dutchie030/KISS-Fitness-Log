@@ -44,6 +44,17 @@ const deleteExerciseBtn =
 const renameExerciseBtn =
     document.getElementById("renameExerciseBtn");
 const moveUpBtn =
+    const historyBtn =
+    document.getElementById("historyBtn");
+
+const homeBtn =
+    document.getElementById("homeBtn");
+
+const homePage =
+    document.getElementById("homePage");
+
+const historyPage =
+    document.getElementById("historyPage");
     document.getElementById("moveUpBtn");
 const exerciseMessage =
     document.getElementById("exerciseMessage");
@@ -484,6 +495,19 @@ moveUpBtn.addEventListener("click", () => {
 
 });
 
+historyBtn.addEventListener("click", () => {
+
+    homePage.classList.add("hidden");
+    historyPage.classList.remove("hidden");
+
+});
+
+homeBtn.addEventListener("click", () => {
+
+    historyPage.classList.add("hidden");
+    homePage.classList.remove("hidden");
+
+});
 moveDownBtn.addEventListener("click", () => {
 
     const exercises = getExercises();
