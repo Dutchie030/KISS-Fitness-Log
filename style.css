@@ -95,3 +95,16 @@ button:hover {
 .cardio-field label {
     margin-bottom: 5px;
 }
+
+.strength-row {
+    display: flex;
+    gap: 10px;
+}
+
+.strength-field {
+    flex: 1;
+}
+
+.strength-field label {
+    margin-bottom: 5px;
+}
