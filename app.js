@@ -44,7 +44,9 @@ const deleteExerciseBtn =
 const renameExerciseBtn =
     document.getElementById("renameExerciseBtn");
 const moveUpBtn =
-    const historyBtn =
+    document.getElementById("moveUpBtn");
+
+const historyBtn =
     document.getElementById("historyBtn");
 
 const homeBtn =
@@ -55,7 +57,6 @@ const homePage =
 
 const historyPage =
     document.getElementById("historyPage");
-    document.getElementById("moveUpBtn");
 const exerciseMessage =
     document.getElementById("exerciseMessage");
 const moveDownBtn =
