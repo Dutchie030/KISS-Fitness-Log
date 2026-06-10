@@ -1,14 +1,17 @@
 .header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .header h2 {
     margin: 0;
 }
+
 .logo {
-    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
 }
 
 body {
