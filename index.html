@@ -142,3 +142,45 @@
         <!-- ==================================== -->
 
         <div id="historyPage" class="card hidden">
+
+            <button id="homeBtn">
+                ← Home
+            </button>
+
+            <h2>Historie</h2>
+
+            <h3 id="historyExerciseName"></h3>
+
+            <!-- BACKUP -->
+
+            <div class="backup-buttons">
+
+                <button id="exportBtn">
+                    Backup
+                </button>
+
+                <button id="importBtn">
+                    Import
+                </button>
+
+            </div>
+
+            <input
+                type="file"
+                id="importFile"
+                accept=".json,application/json"
+                style="display:none;">
+
+            <!-- HISTORIE -->
+
+            <div id="history"></div>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
