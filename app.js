@@ -515,6 +515,44 @@ homeBtn.addEventListener("click", () => {
     homePage.classList.remove("hidden");
 
 });
+
+exportBtn.addEventListener("click", () => {
+
+    const backup = {
+        version: "1.0",
+        exportDate: new Date().toISOString(),
+        exercises: getExercises(),
+        fitnessLog: getData()
+    };
+
+    const json =
+        JSON.stringify(backup, null, 2);
+
+    const blob =
+        new Blob([json], {
+            type: "application/json"
+        });
+
+    const url =
+        URL.createObjectURL(blob);
+
+    const link =
+        document.createElement("a");
+
+    const date =
+        new Date()
+            .toISOString()
+            .slice(0, 10);
+
+    link.href = url;
+    link.download =
+        `kiss-fitness-log-${date}.json`;
+
+    link.click();
+
+    URL.revokeObjectURL(url);
+
+});
 moveDownBtn.addEventListener("click", () => {
 
     const exercises = getExercises();
