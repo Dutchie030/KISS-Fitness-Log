@@ -555,6 +555,87 @@ exportBtn.addEventListener("click", () => {
     URL.revokeObjectURL(url);
 
 });
+
+importBtn.addEventListener("click", () => {
+
+    importFile.click();
+
+});
+
+importFile.addEventListener("change", (event) => {
+
+    const file =
+        event.target.files[0];
+
+    if (!file) {
+        return;
+    }
+
+    const reader =
+        new FileReader();
+
+    reader.onload = (e) => {
+
+        try {
+
+            const backup =
+                JSON.parse(e.target.result);
+
+            if (
+                !backup.exercises ||
+                !backup.fitnessLog
+            ) {
+
+                alert(
+                    "Ongeldig backupbestand."
+                );
+
+                return;
+            }
+
+            if (
+                !confirm(
+                    "Huidige gegevens vervangen?"
+                )
+            ) {
+
+                return;
+            }
+
+            localStorage.setItem(
+                "kissExercises",
+                JSON.stringify(
+                    backup.exercises
+                )
+            );
+
+            localStorage.setItem(
+                "kissFitnessLog",
+                JSON.stringify(
+                    backup.fitnessLog
+                )
+            );
+
+            alert(
+                "Backup succesvol teruggezet."
+            );
+
+            location.reload();
+
+        } catch {
+
+            alert(
+                "Fout bij lezen van backup."
+            );
+
+        }
+
+    };
+
+    reader.readAsText(file);
+
+});
+
 moveDownBtn.addEventListener("click", () => {
 
     const exercises = getExercises();
