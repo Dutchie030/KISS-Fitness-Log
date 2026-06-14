@@ -66,6 +66,8 @@ const historyDiv = document.getElementById("history");
 const lastSetDiv = document.getElementById("lastSet");
 const saveMessage =
     document.getElementById("saveMessage");
+const importFile =
+    document.getElementById("importFile");
 
 function loadExercises() {
 
