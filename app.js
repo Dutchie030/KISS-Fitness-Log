@@ -547,12 +547,14 @@ exportBtn.addEventListener("click", () => {
             .slice(0, 10);
 
     link.href = url;
-    link.download =
-        `kiss-fitness-log-${date}.json`;
+link.download =
+    `kiss-fitness-log-${date}.json`;
 
-    link.click();
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
 
-    URL.revokeObjectURL(url);
+URL.revokeObjectURL(url);
 
 });
 
