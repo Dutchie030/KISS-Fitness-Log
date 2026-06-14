@@ -1,289 +1,144 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KISS Fitness Log</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
-
- <div class="header">
-    <img src="Kiss logo.png"
-         alt="KISS Logo"
-         class="logo">
-    <h2>KISS Fitness Log</h2>
-</div>
-  
-    <div class="card">
-       
-<div id="homePage">
-    
- <label>Oefening</label>            
-<select id="exercise"></select>
+    <div class="container">
 
-<div id="exerciseMessage"></div>
-
-<div class="exercise-buttons">
+        <!-- ==================================== -->
+        <!-- HEADER -->
+        <!-- ==================================== -->
 
-    <button id="addExerciseBtn" title="Toevoegen">
-    ➕
-</button>
+        <div class="header">
+            <img src="Kiss logo.png"
+                 alt="KISS Logo"
+                 class="logo">
+            <h2>KISS Fitness Log</h2>
+        </div>
 
-<button id="renameExerciseBtn" title="Hernoemen">
-    ✏️
-</button>
-
-<button id="deleteExerciseBtn" title="Verwijderen">
-    🗑️
-</button>
+        <!-- ==================================== -->
+        <!-- HOMEPAGE -->
+        <!-- ==================================== -->
 
-</div>
+        <div class="card">
 
-<div class="exercise-buttons">
+            <div id="homePage">
 
-    <button id="moveUpBtn" title="Omhoog">
-    ⬆️
-</button>
-
-<button id="moveDownBtn" title="Omlaag">
-    ⬇️
-</button>
-
-</div>
-        <div class="strength-row">
-
-    <div class="strength-field">
-        <label>Gewicht (kg)</label>
-        <input type="number" id="weight">
-    </div>
-
-    <div class="strength-field">
-        <label>Reps</label>
-        <input type="number" id="reps">
-    </div>
-
-</div>
-
-   <div class="cardio-row">
-
-    <div class="cardio-field">
-        <label for="duration">Duur</label>
-        <input id="duration" type="number">
-    </div>
-
-    <div class="cardio-field">
-        <label for="level">Level</label>
-        <input id="level" type="number">
-    </div>
-
-    <div class="cardio-field">
-        <label for="distance">Km</label>
-        <input
-            id="distance"
-            type="number"
-            step="0.1">
-    </div>
-
-</div>
-       <div class="action-buttons">
-
-    <button id="saveBtn">
-        Opslaan
-    </button>
-
-    <button id="historyBtn">
-        Historie
-    </button>
-
-</div>
-        
-    <div class="card">
-        <h2>Vorige keer</h2>
-        <div id="lastSet">Geen gegevens</div>
-    </div>
-
-</div>
-
-<div id="historyPage" class="card hidden">
-
-    <button id="homeBtn">
-        ← Home
-    </button>
+                <!-- OEFENING -->
 
-    <h2>Historie</h2>
+                <label>Oefening</label>
+                <select id="exercise"></select>
 
-    <h3 id="historyExerciseName"></h3>
+                <div id="exerciseMessage"></div>
 
-    <div class="backup-buttons">
-<h4>Gegevens backup</h4> <br>
-    <button id="exportBtn">
-        Backup
-    </button>
-
-    <button id="importBtn">
-        Import
-    </button>
-
-</div>
-
-  <input
-    type="file"
-    id="importFile"
-    accept=".json,application/json"
-    style="display:none;">
-    
-    <div id="history"></div>
-
-</div>
-
-<script src="app.js"></script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KISS Fitness Log</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<div class="container">
-
- <div class="header">
-    <img src="Kiss logo.png"
-         alt="KISS Logo"
-         class="logo">
-    <h2>KISS Fitness Log</h2>
-</div>
-  
-    <div class="card">
-       
-<div id="homePage">
-    
- <label>Oefening</label>            
-<select id="exercise"></select>
+                <!-- OEFENING BEHEREN -->
 
-<div id="exerciseMessage"></div>
+                <div class="exercise-buttons">
 
-<div class="exercise-buttons">
+                    <button id="addExerciseBtn" title="Toevoegen">
+                        ➕
+                    </button>
 
-    <button id="addExerciseBtn" title="Toevoegen">
-    ➕
-</button>
+                    <button id="renameExerciseBtn" title="Hernoemen">
+                        ✏️
+                    </button>
 
-<button id="renameExerciseBtn" title="Hernoemen">
-    ✏️
-</button>
+                    <button id="deleteExerciseBtn" title="Verwijderen">
+                        🗑️
+                    </button>
 
-<button id="deleteExerciseBtn" title="Verwijderen">
-    🗑️
-</button>
+                </div>
 
-</div>
+                <div class="exercise-buttons">
 
-<div class="exercise-buttons">
+                    <button id="moveUpBtn" title="Omhoog">
+                        ⬆️
+                    </button>
 
-    <button id="moveUpBtn" title="Omhoog">
-    ⬆️
-</button>
+                    <button id="moveDownBtn" title="Omlaag">
+                        ⬇️
+                    </button>
 
-<button id="moveDownBtn" title="Omlaag">
-    ⬇️
-</button>
+                </div>
 
-</div>
-        <div class="strength-row">
+                <!-- KRACHT -->
 
-    <div class="strength-field">
-        <label>Gewicht (kg)</label>
-        <input type="number" id="weight">
-    </div>
+                <div class="strength-row">
 
-    <div class="strength-field">
-        <label>Reps</label>
-        <input type="number" id="reps">
-    </div>
+                    <div class="strength-field">
+                        <label>Gewicht (kg)</label>
+                        <input type="number" id="weight">
+                    </div>
 
-</div>
+                    <div class="strength-field">
+                        <label>Reps</label>
+                        <input type="number" id="reps">
+                    </div>
 
-   <div class="cardio-row">
+                </div>
 
-    <div class="cardio-field">
-        <label for="duration">Duur</label>
-        <input id="duration" type="number">
-    </div>
+                <!-- CARDIO -->
 
-    <div class="cardio-field">
-        <label for="level">Level</label>
-        <input id="level" type="number">
-    </div>
+                <div class="cardio-row">
 
-    <div class="cardio-field">
-        <label for="distance">Km</label>
-        <input
-            id="distance"
-            type="number"
-            step="0.1">
-    </div>
+                    <div class="cardio-field">
+                        <label for="duration">Duur</label>
+                        <input id="duration" type="number">
+                    </div>
 
-</div>
-       <div class="action-buttons">
+                    <div class="cardio-field">
+                        <label for="level">Level</label>
+                        <input id="level" type="number">
+                    </div>
 
-    <button id="saveBtn">
-        Opslaan
-    </button>
+                    <div class="cardio-field">
+                        <label for="distance">Km</label>
+                        <input id="distance"
+                               type="number"
+                               step="0.1">
+                    </div>
 
-    <button id="historyBtn">
-        Historie
-    </button>
+                </div>
 
-</div>
-        
-    <div class="card">
-        <h2>Vorige keer</h2>
-        <div id="lastSet">Geen gegevens</div>
-    </div>
+                <!-- ACTIEKNOPPEN -->
 
-</div>
+                <div class="action-buttons">
 
-<div id="historyPage" class="card hidden">
+                    <button id="saveBtn">
+                        Opslaan
+                    </button>
 
-    <button id="homeBtn">
-        ← Home
-    </button>
+                    <button id="historyBtn">
+                        Historie
+                    </button>
 
-    <h2>Historie</h2>
+                </div>
 
-    <div class="backup-buttons">
+                <!-- VORIGE KEER -->
 
-    <button id="exportBtn">
-        Backup
-    </button>
+                <div class="card">
 
-    <button id="importBtn">
-        Import
-    </button>
+                    <h2>Vorige keer</h2>
 
-</div>
-   <h3 id="historyExerciseName"></h3>
+                    <div id="lastSet">
+                        Geen gegevens
+                    </div>
 
+                </div>
 
-  <input
-    type="file"
-    id="importFile"
-    accept=".json,application/json"
-    style="display:none;">
-    
-    <div id="history"></div>
+            </div>
 
-</div>
- 
-<script src="app.js"></script>
+        </div>
 
-</body>
-</html>
+        <!-- ==================================== -->
+        <!-- HISTORIE PAGINA -->
+        <!-- ==================================== -->
+
+        <div id="historyPage" class="card hidden">
