@@ -531,6 +531,10 @@ moveUpBtn.addEventListener("click", () => {
 
 });
 
+/* ==================================== */
+/* NAVIGATIE */
+/* ==================================== */
+
 historyBtn.addEventListener("click", () => {
 
     historyExerciseName.textContent =
@@ -549,6 +553,10 @@ homeBtn.addEventListener("click", () => {
     homePage.classList.remove("hidden");
 
 });
+
+/* ==================================== */
+/* BACKUP / HERSTEL */
+/* ==================================== */
 
 exportBtn.addEventListener("click", () => {
 
@@ -700,6 +708,10 @@ moveDownBtn.addEventListener("click", () => {
     }, 2000);
 
 });
+
+/* ==================================== */
+/* INITIALISATIE */
+/* ==================================== */
 
 loadExercises();
 updateLastSet();
