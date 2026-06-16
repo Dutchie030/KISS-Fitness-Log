@@ -75,8 +75,11 @@ button:hover {
 }
 
 #saveMessage {
-    margin-top: 10px;
+    text-align: center;
     font-weight: bold;
+    min-height: 24px;
+    margin: 10px 0;
+    color: #28a745;
 }
 
 .exercise-buttons {
