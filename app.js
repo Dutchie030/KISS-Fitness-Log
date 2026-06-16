@@ -1,3 +1,7 @@
+/* ==================================== */
+/* CONFIGURATIE */
+/* ==================================== */
+
 const defaultExercises = [
     "Chest Press",
     "Low Row",
@@ -8,6 +12,10 @@ const defaultExercises = [
     "Leg Extension",
     "Leg Curl"
 ];
+
+/* ==================================== */
+/* LOCAL STORAGE */
+/* ==================================== */
 
 function getExercises() {
 
@@ -25,6 +33,10 @@ function saveExercises(exercises) {
     );
 
 }
+
+/* ==================================== */
+/* HTML ELEMENTEN */
+/* ==================================== */
 
 const exerciseSelect = document.getElementById("exercise");
 const weightInput = document.getElementById("weight");
@@ -69,6 +81,10 @@ const saveMessage =
 const importFile =
     document.getElementById("importFile");
 
+/* ==================================== */
+/* OEFENINGEN */
+/* ==================================== */
+
 function loadExercises() {
 
     exerciseSelect.innerHTML = "";
@@ -94,6 +110,10 @@ function getData() {
 function saveData(data) {
     localStorage.setItem("kissFitnessLog", JSON.stringify(data));
 }
+
+/* ==================================== */
+/* LAATSTE SET */
+/* ==================================== */
 
 function getLastSet(exercise) {
     const data = getData()
@@ -157,6 +177,10 @@ function updateLastSet() {
 distanceInput.value = "";
     }
 }
+
+/* ==================================== */
+/* HISTORIE */
+/* ==================================== */
 
 function updateHistory() {
 
