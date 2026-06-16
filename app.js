@@ -34,6 +34,14 @@ function saveExercises(exercises) {
 
 }
 
+function getData() {
+    return JSON.parse(localStorage.getItem("kissFitnessLog")) || [];
+}
+
+function saveData(data) {
+    localStorage.setItem("kissFitnessLog", JSON.stringify(data));
+}
+
 /* ==================================== */
 /* HTML ELEMENTEN */
 /* ==================================== */
@@ -101,14 +109,6 @@ function loadExercises() {
 
     });
 
-}
-
-function getData() {
-    return JSON.parse(localStorage.getItem("kissFitnessLog")) || [];
-}
-
-function saveData(data) {
-    localStorage.setItem("kissFitnessLog", JSON.stringify(data));
 }
 
 /* ==================================== */
