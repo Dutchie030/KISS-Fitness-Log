@@ -310,6 +310,10 @@ data.forEach(item => {
 
 }
 
+/* ==================================== */
+/* OPSLAAN */
+/* ==================================== */
+
 saveBtn.addEventListener("click", () => {
 
     const exercise = exerciseSelect.value;
@@ -370,6 +374,10 @@ exerciseSelect.addEventListener("change", () => {
     updateLastSet();
     updateHistory();
 });
+
+/* ==================================== */
+/* OEFENINGEN BEHEREN */
+/* ==================================== */
 
 addExerciseBtn.addEventListener("click", () => {
 
