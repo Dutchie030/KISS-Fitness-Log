@@ -18,6 +18,7 @@
     border-radius: 10px;
 }
 
+
 /* ==================================== */
 /* BASIS LAYOUT */
 /* ==================================== */
@@ -47,6 +48,7 @@ h1 {
     margin-bottom: 15px;
 }
 
+
 /* ==================================== */
 /* FORMULIEREN */
 /* ==================================== */
@@ -67,6 +69,7 @@ select {
     box-sizing: border-box;
 }
 
+
 /* ==================================== */
 /* KNOPPEN */
 /* ==================================== */
@@ -85,10 +88,10 @@ button:hover {
     opacity: 0.9;
 }
 
-.history-item {
-    padding: 6px 0;
-    border-bottom: 1px solid #333;
-}
+
+/* ==================================== */
+/* MELDINGEN */
+/* ==================================== */
 
 #saveMessage {
     text-align: left;
@@ -98,6 +101,18 @@ button:hover {
     min-height: 24px;
     margin: 10px 0;
 }
+
+#exerciseMessage {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+
+/* ==================================== */
+/* OEFENINGEN */
+/* ==================================== */
 
 .exercise-buttons {
     display: flex;
@@ -112,12 +127,28 @@ button:hover {
     font-size: 20px;
 }
 
-#exerciseMessage {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    font-size: 0.9rem;
-    font-weight: bold;
+
+/* ==================================== */
+/* KRACHT */
+/* ==================================== */
+
+.strength-row {
+    display: flex;
+    gap: 10px;
 }
+
+.strength-field {
+    flex: 1;
+}
+
+.strength-field label {
+    margin-bottom: 5px;
+}
+
+
+/* ==================================== */
+/* CARDIO */
+/* ==================================== */
 
 .cardio-row {
     display: flex;
@@ -132,18 +163,10 @@ button:hover {
     margin-bottom: 5px;
 }
 
-.strength-row {
-    display: flex;
-    gap: 10px;
-}
 
-.strength-field {
-    flex: 1;
-}
-
-.strength-field label {
-    margin-bottom: 5px;
-}
+/* ==================================== */
+/* ACTIEKNOPPEN */
+/* ==================================== */
 
 .action-buttons {
     display: flex;
@@ -167,8 +190,21 @@ button:hover {
     width: auto;
 }
 
-.hidden {
-    display: none;
+
+/* ==================================== */
+/* HISTORIE */
+/* ==================================== */
+
+.history-item {
+    padding: 6px 0;
+    border-bottom: 1px solid #333;
 }
 
 
+/* ==================================== */
+/* HULPKLASSEN */
+/* ==================================== */
+
+.hidden {
+    display: none;
+}
