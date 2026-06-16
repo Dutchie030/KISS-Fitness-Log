@@ -130,51 +130,52 @@ function updateLastSet() {
         lastSetDiv.textContent = "Geen gegevens";
         weightInput.value = "";
         repsInput.value = "";
+        durationInput.value = "";
+        levelInput.value = "";
+        distanceInput.value = "";
         return;
     }
 
     if (lastSet.duration) {
+        let lastSetText =
+            `${lastSet.duration} min`;
 
-    let lastSetText =
-        `${lastSet.duration} min`;
+        if (lastSet.level) {
+            lastSetText += ` - level ${lastSet.level}`;
+        }
 
-    if (lastSet.level) {
-        lastSetText += ` - level ${lastSet.level}`;
-    }
+        if (lastSet.distance) {
+            lastSetText += ` - ${lastSet.distance} km`;
+        }
 
-    if (lastSet.distance) {
-        lastSetText += ` - ${lastSet.distance} km`;
-    }
+        lastSetDiv.textContent =
+            lastSetText;
 
-    lastSetDiv.textContent =
-        lastSetText;
+        durationInput.value =
+            lastSet.duration;
 
-    durationInput.value =
-        lastSet.duration;
+        levelInput.value =
+            lastSet.level || "";
 
-    levelInput.value =
-        lastSet.level || "";
+        distanceInput.value =
+            lastSet.distance || "";
 
-    distanceInput.value =
-        lastSet.distance || "";
+        weightInput.value = "";
+        repsInput.value = "";
 
-    weightInput.value = "";
-    repsInput.value = "";
+    } else {
+        lastSetDiv.textContent =
+            `${lastSet.weight} kg × ${lastSet.reps}`;
 
-} else {
+        weightInput.value =
+            lastSet.weight;
 
-    lastSetDiv.textContent =
-        `${lastSet.weight} kg × ${lastSet.reps}`;
+        repsInput.value =
+            lastSet.reps;
 
-    weightInput.value =
-        lastSet.weight;
-
-    repsInput.value =
-        lastSet.reps;
-
-    durationInput.value = "";
+        durationInput.value = "";
         levelInput.value = "";
-distanceInput.value = "";
+        distanceInput.value = "";
     }
 }
 
@@ -355,7 +356,7 @@ const distance =
     distance
 });
 
-    saveData(data);
+saveData(data);
 
 updateLastSet();
 updateHistory();
@@ -531,6 +532,37 @@ moveUpBtn.addEventListener("click", () => {
 
 });
 
+moveDownBtn.addEventListener("click", () => {
+
+    const exercises = getExercises();
+    const currentExercise = exerciseSelect.value;
+    const index = exercises.indexOf(currentExercise);
+
+    if (index === -1 || index >= exercises.length - 1) {
+        return;
+    }
+
+    const temp = exercises[index + 1];
+    exercises[index + 1] = exercises[index];
+    exercises[index] = temp;
+
+    saveExercises(exercises);
+    loadExercises();
+
+    exerciseSelect.value = currentExercise;
+
+    updateLastSet();
+    updateHistory();
+
+    exerciseMessage.textContent =
+        `${currentExercise} staat nu op plek ${exercises.indexOf(currentExercise) + 1} van ${exercises.length}`;
+
+    setTimeout(() => {
+        exerciseMessage.textContent = "";
+    }, 2000);
+
+});
+
 /* ==================================== */
 /* NAVIGATIE */
 /* ==================================== */
@@ -586,7 +618,7 @@ exportBtn.addEventListener("click", () => {
             .toISOString()
             .slice(0, 10);
 
-    link.href = url;
+link.href = url;
 link.download =
     `kiss-fitness-log-${date}.json`;
 
@@ -678,36 +710,6 @@ importFile.addEventListener("change", (event) => {
 
 });
 
-moveDownBtn.addEventListener("click", () => {
-
-    const exercises = getExercises();
-    const currentExercise = exerciseSelect.value;
-    const index = exercises.indexOf(currentExercise);
-
-    if (index === -1 || index >= exercises.length - 1) {
-        return;
-    }
-
-    const temp = exercises[index + 1];
-    exercises[index + 1] = exercises[index];
-    exercises[index] = temp;
-
-    saveExercises(exercises);
-    loadExercises();
-
-    exerciseSelect.value = currentExercise;
-
-    updateLastSet();
-    updateHistory();
-
-    exerciseMessage.textContent =
-        `${currentExercise} staat nu op plek ${exercises.indexOf(currentExercise) + 1} van ${exercises.length}`;
-
-    setTimeout(() => {
-        exerciseMessage.textContent = "";
-    }, 2000);
-
-});
 
 /* ==================================== */
 /* INITIALISATIE */
