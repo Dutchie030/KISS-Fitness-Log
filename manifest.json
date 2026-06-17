@@ -1,6 +1,6 @@
 {
   "name": "KISS Fitness Log",
-  "short_name": "KISS",
+  "short_name": "KISS FL",
   "description": "KISS Fitness Log",
   "start_url": "./",
   "scope": "./",
