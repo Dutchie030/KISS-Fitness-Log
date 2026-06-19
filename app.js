@@ -329,6 +329,7 @@ data.forEach(item => {
             saveData(allData);
 
             updateLastSet();
+            updateTodaySet();
             updateHistory();
 
         }
