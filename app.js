@@ -88,6 +88,8 @@ const saveMessage =
     document.getElementById("saveMessage");
 const importFile =
     document.getElementById("importFile");
+const todaySetDiv =
+    document.getElementById("todaySet");
 
 /* ==================================== */
 /* OEFENINGEN */
