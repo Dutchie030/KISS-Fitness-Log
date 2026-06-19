@@ -407,6 +407,7 @@ setTimeout(() => {
 
 exerciseSelect.addEventListener("change", () => {
     updateLastSet();
+    updateTodaySet();
     updateHistory();
 });
 
