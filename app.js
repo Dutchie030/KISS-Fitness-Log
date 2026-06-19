@@ -183,8 +183,10 @@ function updateLastSet() {
 
 function updateTodaySet() {
 
-}
+    todaySetDiv.textContent =
+        "Test werkt";
 
+}
 /* ==================================== */
 /* HISTORIE */
 /* ==================================== */
@@ -723,4 +725,5 @@ importFile.addEventListener("change", (event) => {
 
 loadExercises();
 updateLastSet();
+updateTodaySet();
 updateHistory();
