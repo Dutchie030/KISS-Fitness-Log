@@ -183,8 +183,30 @@ function updateLastSet() {
 
 function updateTodaySet() {
 
+    const exercise =
+        exerciseSelect.value;
+
+    const today =
+        new Date()
+        .toLocaleDateString("sv-SE");
+
+    const data =
+        getData().filter(item =>
+            item.exercise === exercise &&
+            item.date.startsWith(today)
+        );
+
+    if (data.length === 0) {
+
+        todaySetDiv.textContent =
+            "Nog geen sets";
+
+        return;
+
+    }
+
     todaySetDiv.textContent =
-        "Test werkt";
+        `${data.length} sets vandaag`;
 
 }
 /* ==================================== */
