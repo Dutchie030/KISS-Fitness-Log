@@ -205,8 +205,11 @@ function updateTodaySet() {
 
     }
 
-    todaySetDiv.textContent =
-        `${data.length} sets vandaag`;
+    const lastEntry =
+    data[data.length - 1];
+
+todaySetDiv.textContent =
+    `${lastEntry.weight} kg × ${lastEntry.reps} (${data.length} sets)`;
 
 }
 /* ==================================== */
