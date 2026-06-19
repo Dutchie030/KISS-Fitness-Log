@@ -752,3 +752,4 @@ loadExercises();
 updateLastSet();
 updateTodaySet();
 updateHistory();
+updateTodaySet();
