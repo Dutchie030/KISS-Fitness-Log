@@ -393,7 +393,8 @@ saveData(data);
 
 updateLastSet();
 updateHistory();
-
+updateTodaySet();
+    
 saveMessage.textContent =
     "✔️ Set opgeslagen";
 
@@ -752,4 +753,4 @@ loadExercises();
 updateLastSet();
 updateTodaySet();
 updateHistory();
-updateTodaySet();
+
