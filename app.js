@@ -181,7 +181,9 @@ function updateLastSet() {
     }
 }
 
-function updateTodaySet()
+function updateTodaySet() {
+
+}
 
 /* ==================================== */
 /* HISTORIE */
