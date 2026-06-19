@@ -114,7 +114,7 @@ function loadExercises() {
 }
 
 /* ==================================== */
-/* LAATSTE SET */
+/* HOME SCHERM */
 /* ==================================== */
 
 function getLastSet(exercise) {
@@ -180,6 +180,8 @@ function updateLastSet() {
         distanceInput.value = "";
     }
 }
+
+function updateTodaySet()
 
 /* ==================================== */
 /* HISTORIE */
