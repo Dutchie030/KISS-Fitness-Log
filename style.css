@@ -5,17 +5,32 @@
 .header {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
+    padding: 10px 0 12px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
 }
 
 .header h2 {
     margin: 0;
+    font-size: 1.55rem;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.version {
+    margin-left: auto;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #bfc7d1;
+    white-space: nowrap;
 }
 
 .logo {
     width: 42px;
     height: 42px;
     border-radius: 10px;
+    flex-shrink: 0;
 }
 
 
