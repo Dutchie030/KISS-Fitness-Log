@@ -12,6 +12,10 @@
     margin: 0;
 }
 
+.header h3 {
+    text-align: right;
+}
+
 .logo {
     width: 42px;
     height: 42px;
