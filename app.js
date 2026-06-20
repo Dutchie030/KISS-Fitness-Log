@@ -43,6 +43,21 @@ function saveData(data) {
 }
 
 /* ==================================== */
+/* DATUMFUNCTIES */
+/* ==================================== */
+
+function isToday(dateString) {
+    const date = new Date(dateString);
+    const today = new Date();
+
+    return (
+        date.getFullYear() === today.getFullYear() &&
+        date.getMonth() === today.getMonth() &&
+        date.getDate() === today.getDate()
+    );
+}
+
+/* ==================================== */
 /* HTML ELEMENTEN */
 /* ==================================== */
 
@@ -186,15 +201,11 @@ function updateTodaySet() {
     const exercise =
         exerciseSelect.value;
 
-    const today =
-        new Date()
-        .toLocaleDateString("sv-SE");
-
     const data =
-        getData().filter(item =>
-            item.exercise === exercise &&
-            item.date.startsWith(today)
-        );
+    getData().filter(item =>
+        item.exercise === exercise &&
+        isToday(item.date)
+    );
 
     if (data.length === 0) {
 
