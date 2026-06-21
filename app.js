@@ -19,9 +19,15 @@ const defaultExercises = [
 
 function getExercises() {
 
-    return JSON.parse(
-        localStorage.getItem("kissExercises")
-    ) || defaultExercises;
+    const savedExercises =
+        JSON.parse(localStorage.getItem("kissExercises"));
+
+    if (Array.isArray(savedExercises) && savedExercises.length > 0) {
+        return savedExercises;
+    }
+
+    saveExercises(defaultExercises);
+    return defaultExercises;
 
 }
 
