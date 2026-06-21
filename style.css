@@ -11,6 +11,11 @@
     border-bottom: 1px solid #333;
 }
 
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
 .header h2 {
     margin: 0;
     font-size: 1.55rem;
@@ -18,9 +23,17 @@
     white-space: nowrap;
 }
 
+.header h4 {
+    margin: 2px 0 0 0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #bfc7d1;
+    white-space: nowrap;
+}
+
 .version {
     margin-left: auto;
-    font-size: 1.0rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #bfc7d1;
     white-space: nowrap;
@@ -32,7 +45,6 @@
     border-radius: 10px;
     flex-shrink: 0;
 }
-
 
 /* ==================================== */
 /* BASIS LAYOUT */
