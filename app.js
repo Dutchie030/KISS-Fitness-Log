@@ -219,8 +219,15 @@ function updateTodaySet() {
     const lastEntry =
     data[data.length - 1];
 
-todaySetDiv.textContent =
-    `${lastEntry.weight} kg × ${lastEntry.reps} (${data.length} sets)`;
+if (lastEntry.duration) {
+
+    todaySetDiv.textContent =
+        `${lastEntry.duration} min - level ${lastEntry.level} - ${lastEntry.distance} km (${data.length}×)`;
+
+} else {
+
+    todaySetDiv.textContent =
+        `${lastEntry.weight} kg × ${lastEntry.reps} (${data.length} sets)`;
 
 }
 /* ==================================== */
