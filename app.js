@@ -217,19 +217,22 @@ function updateTodaySet() {
     }
 
     const lastEntry =
-    data[data.length - 1];
+        data[data.length - 1];
 
-if (lastEntry.duration) {
+    if (lastEntry.duration) {
 
-    todaySetDiv.textContent =
-        `${lastEntry.duration} min - level ${lastEntry.level} - ${lastEntry.distance} km (${data.length}×)`;
+        todaySetDiv.textContent =
+            `${lastEntry.duration} min - level ${lastEntry.level} - ${lastEntry.distance} km (${data.length}×)`;
 
-} else {
+    } else {
 
-    todaySetDiv.textContent =
-        `${lastEntry.weight} kg × ${lastEntry.reps} (${data.length} sets)`;
+        todaySetDiv.textContent =
+            `${lastEntry.weight} kg × ${lastEntry.reps} (${data.length} sets)`;
+
+    }
 
 }
+
 /* ==================================== */
 /* HISTORIE */
 /* ==================================== */
