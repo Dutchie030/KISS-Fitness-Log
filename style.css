@@ -256,5 +256,5 @@ button:hover {
 }
 
 #historyPage {
-    display: block !important;
+    display: none;
 }
