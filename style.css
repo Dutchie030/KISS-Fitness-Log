@@ -239,3 +239,17 @@ button:hover {
 .hidden {
     display: none;
 }
+.set-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.set-column {
+    flex: 1;
+}
+
+.set-column h3 {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
