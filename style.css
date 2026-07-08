@@ -236,6 +236,10 @@ button:hover {
 /* HULPKLASSEN */
 /* ==================================== */
 
+.hidden {
+    display: none;
+}
+
 .set-row {
     display: flex;
     justify-content: space-between;
@@ -249,8 +253,4 @@ button:hover {
 .set-column h3 {
     margin-top: 0;
     margin-bottom: 6px;
-}
-
-.hidden {
-    display: none;
 }
